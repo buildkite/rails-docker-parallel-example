@@ -2,7 +2,7 @@
 
 [![Add to Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
 
-This repository is an example of how to easily run 20 parallel testing agents for a [Rails](https://rubyonrails.org/) application using [Buildkite](https://buildkite.com/), [Docker](https://www.docker.com) and [Knapsack](https://github.com/ArturT/knapsack). This approach works well with Docker available autoscaling environments like the [Buildkite AWS Stack](https://buildkite.com/buildkite/buildkite-aws-stack).
+This repository is an example of how to easily run a large number of parallel testing agents for a [Rails](https://rubyonrails.org/) application using [Buildkite](https://buildkite.com/), [Docker](https://www.docker.com) and [Knapsack](https://github.com/ArturT/knapsack). This approach works well with Docker available autoscaling environments like the [Buildkite AWS Stack](https://buildkite.com/buildkite/buildkite-aws-stack).
 
 This repository doesn't actually include a Rails sample application, but has the same CI scripts, `Dockerfile` and `docker-compose.yml` you would use for a production application. For a non-Docker based setup, see the [Rails Parallel Example](https://github.com/buildkite/rails-parallel-example).
 
@@ -15,7 +15,7 @@ Files to note:
 
 ## How does it work?
 
-In the [pipeline configuration file](.buildkite/pipeline.yml) the `parallelism` property for the test step is set to 20. When a build, the step will appear 20 times in the pipeline, each with different environment variables exposed so you can divvy up your test suite accordingly. You can then run 20 agents (on the same machine, or distributed) to work on the 20 jobs in parallel.
+In the [pipeline configuration file](.buildkite/pipeline.yml) the `parallelism` property for the test step is set to 20. When a build, the step will appear 20 times in the pipeline, each with different environment variables exposed so you can divvy up your test suite accordingly. You can set the parallelism as high as you need to bring down your build times.
 
 See the [parallelizing builds guide](https://buildkite.com/docs/guides/parallelizing-builds) for more information to create parallelized and distributed builds with Buildkite.
 
