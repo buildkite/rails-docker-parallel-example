@@ -1,0 +1,10 @@
+{
+  "name": "Rails Parallel Example",
+  "steps": [
+    {
+      "type": "script",
+      "name": ":pipeline:",
+      "command": "buildkite-agent pipeline upload"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+version: '2'
+
+services:
+  app:
+    build: .
+    links:
+      - db:db
+      - redis:redis
+      - memcache:memcache
+    # This mounts the current Buildkite build into /app, ensuring any
+    # generated files and artifacts are available to the buildkite-agent on
+    # the host machine (outside of the Docker Container)
+    volumes:
+      - "./:/app"
+    env_file:
+      - ".env-sample"
+    environment:
+      PGHOST: db
+      PGUSER: postgres
+      REDIS_URL: redis://redis
+      MEMCACHE_SERVERS: memcache
+      # CI envs
+      CI:
+      RAILS_ENV:
+      # CI envs For Knapsack
+      BUILDKITE_PARALLEL_JOB:
+      BUILDKITE_PARALLEL_JOB_COUNT:
+      BUILDKITE_COMMIT:
+      BUILDKITE_BRANCH:
+      BUILDKITE_REPO:
+      BUILDKITE_BUILD_ID:
+      BUILDKITE_BUILD_NUMBER:
+    ports:
+      - "5000:5000"
+    entrypoint: wait-for-it.sh db:5432 -s -- wait-for-it.sh redis:6379 -s -- wait-for-it.sh memcache:11211 -s --
+
+  db:
+    image: postgres
+
+  redis:
+    image: redis
+
+  memcache:
+    image: tutum/memcached
