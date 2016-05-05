@@ -1,5 +1,5 @@
 {
-  "name": "Rails Parallel Example",
+  "name": "Rails Parallel Docker Example",
   "steps": [
     {
       "type": "script",
