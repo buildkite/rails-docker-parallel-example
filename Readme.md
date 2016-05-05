@@ -2,11 +2,9 @@
 
 [![Add to Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
 
-This repository is an example on how to easily run 20 parallel testing agents for a [Rails](https://rubyonrails.org/) application using [Buildkite](https://buildkite.com/), [Docker](https://www.docker.com) and [Knapsack](https://github.com/ArturT/knapsack).
+This repository is an example of how to easily run 20 parallel testing agents for a [Rails](https://rubyonrails.org/) application using [Buildkite](https://buildkite.com/), [Docker](https://www.docker.com) and [Knapsack](https://github.com/ArturT/knapsack). This approach works well with Docker available autoscaling environments like the [Buildkite AWS Stack](https://buildkite.com/buildkite/buildkite-aws-stack).
 
-This repository doesn't actually include a Rails sample application, but has the same CI scripts, Dockerfile and docker-compose you would use for a production application.
-
-For a non-Docker based setup, see the [Rails Parallel Example](https://github.com/buildkite/rails-parallel-example).
+This repository doesn't actually include a Rails sample application, but has the same CI scripts, `Dockerfile` and `docker-compose.yml` you would use for a production application. For a non-Docker based setup, see the [Rails Parallel Example](https://github.com/buildkite/rails-parallel-example).
 
 Files to note:
 
