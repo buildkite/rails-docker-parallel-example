@@ -6,3 +6,5 @@ steps:
       BUILDKITE_DOCKER_COMPOSE_CONTAINER: app
       RAILS_ENV: test
     parallelism: 20
+    agents:
+      queue: $BUILDKITE_AGENT_META_DATA_QUEUE
