@@ -6,7 +6,7 @@ steps:
       BUILDKITE_DOCKER_COMPOSE_CONTAINER: app
       RAILS_ENV: test
     plugins:
-      docker-compose#ed68516:
+      docker-compose#ce95c0f7cf1b97e7eb201d15d866cb89f1ac7ea5:
         run: app
     parallelism: 20
     agents:
