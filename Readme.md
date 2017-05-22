@@ -23,6 +23,10 @@ See the [Containerized Builds with Docker guide](https://buildkite.com/docs/guid
 
 Consult the [Knapsack documentation](https://github.com/ArturT/knapsack) for configuring your database and dependent services to support running parallel steps on the one machine.
 
+## Knapsack Pro
+
+See [Knapsack Pro version of this example pipeline](https://github.com/KnapsackPro/buildkite-rails-docker-parallel-example-with-knapsack_pro) for how to perform dynamic splits/allocation of test nodes.
+
 ## License
 
 See [Licence.md](Licence.md) (MIT)
