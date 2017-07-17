@@ -11,7 +11,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F
     && apt-get install -y postgresql-client
 
 # Node, needed for asset pipeline
-RUN curl -sL https://deb.nodesource.com/setup_5.x | bash - \
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
     && apt-get update \
     && apt-get install -y nodejs \
     && npm install -q -g npm
@@ -28,7 +28,7 @@ RUN gem install bundler \
     && bundle install -j 32
 
 # Install npm libraries next
-ADD npm-shrinkwrap.json /app/npm-shrinkwrap.json
+ADD package.json npm-shrinkwrap.json /app/
 RUN npm install
 
 # Now add the rest of your code
