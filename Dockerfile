@@ -36,7 +36,7 @@ ADD . /app/
 
 # We want to precompile the assets into the Docker image, unless it's
 # development when you're just using live asset compilation
-RUN if [[ $RAILS_ENV != "development" ]]; then rm -rf public/assets && rake assets:precompile; else true; fi
+RUN if [ "$RAILS_ENV" != "development" ]; then rm -rf public/assets && rake assets:precompile; else true; fi
 
 # Clean up
 RUN apt-get clean \
