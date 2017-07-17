@@ -5,9 +5,10 @@ steps:
         build: app
         image-repository: "$DOCKER_IMAGE_REPO"
     agents:
-      queue: "$BUILDKITE_AGENT_META_DATA_QUEUE"
+      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE}-builder"
   
   - wait
+
   - name: ":rspec:"
     command: "scripts/ci/parallel_specs.sh"
     artifact_paths: "log/**/*"
@@ -17,6 +18,6 @@ steps:
     plugins:
       docker-compose#v1.3.2:
         run: app
-    parallelism: 400
+    parallelism: 300
     agents:
       queue: "$BUILDKITE_AGENT_META_DATA_QUEUE"
