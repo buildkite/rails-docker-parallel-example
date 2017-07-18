@@ -3,10 +3,9 @@ steps:
     command: "scripts/ci/parallel_specs.sh"
     artifact_paths: "log/**/*"
     env:
-      BUILDKITE_DOCKER_COMPOSE_CONTAINER: app
       RAILS_ENV: test
     plugins:
-      docker-compose#ce95c0f7cf1b97e7eb201d15d866cb89f1ac7ea5:
+      docker-compose#v1.3.2:
         run: app
     parallelism: 20
     agents:
