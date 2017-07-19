@@ -12,9 +12,6 @@ steps:
   - name: ":rspec:"
     command: "scripts/ci/parallel_specs.sh"
     artifact_paths: "log/**/*"
-    env:
-      BUILDKITE_DOCKER_COMPOSE_CONTAINER: app
-      RAILS_ENV: test
     plugins:
       docker-compose#v1.3.2:
         run: app
