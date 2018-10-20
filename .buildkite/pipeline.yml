@@ -5,8 +5,8 @@ steps:
     env:
       RAILS_ENV: test
     plugins:
-      docker-compose#v2.5.0:
-        run: app
+      - docker-compose#v2.5.0:
+          run: app
     parallelism: 20
     agents:
       queue: $BUILDKITE_AGENT_META_DATA_QUEUE
