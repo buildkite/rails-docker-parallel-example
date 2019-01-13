@@ -27,6 +27,14 @@ Consult the [Knapsack documentation](https://github.com/ArturT/knapsack) for con
 
 See [Knapsack Pro version of this example pipeline](https://github.com/KnapsackPro/buildkite-rails-docker-parallel-example-with-knapsack_pro) for how to perform dynamic splits/allocation of test nodes.
 
+## Running locally
+
+To run the specs locally on your development machine, you can run:
+
+```bash
+docker-compose run app scripts/ci/parallel_specs.sh
+```
+
 ## License
 
 See [Licence.md](Licence.md) (MIT)

@@ -5,7 +5,7 @@ steps:
     env:
       RAILS_ENV: test
     plugins:
-      - docker-compose#v2.5.0:
+      - docker-compose#v2.6.0:
           run: app
     parallelism: 20
     agents:

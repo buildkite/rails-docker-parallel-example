@@ -5,13 +5,13 @@ EXPOSE 5000
 ENV RAILS_ENV=test
 
 # Add official postgresql apt deb source
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8 \
-    && echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list \
+RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" > /etc/apt/sources.list.d/pgdg.list \
+    && wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
     && apt-get update \
-    && apt-get install -y postgresql-client
+    && apt-get install -y postgresql-client-10
 
 # Node, needed for asset pipeline
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
+RUN curl -sL https://deb.nodesource.com/setup_11.x | bash - \
     && apt-get update \
     && apt-get install -y nodejs \
     && npm install -q -g npm
@@ -28,7 +28,7 @@ RUN gem install bundler \
     && bundle install -j 32
 
 # Install npm libraries next
-ADD package.json npm-shrinkwrap.json /app/
+ADD package.json package-lock.json /app/
 RUN npm install
 
 # Now add the rest of your code
