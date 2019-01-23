@@ -1,5 +1,5 @@
+# Used by the 'Add to Buildkite' button in the readme
 name: "Rails Parallel Docker Example"
-description: "An example of how to run Rails CI and test steps in parallel with Docker and Buildkite"
 steps:
   - command: "buildkite-agent pipeline upload"
     label: ":pipeline:"
