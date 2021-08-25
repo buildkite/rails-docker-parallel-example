@@ -35,10 +35,10 @@ services:
     entrypoint: wait-for-it.sh db:5432 -s -- wait-for-it.sh redis:6379 -s -- wait-for-it.sh memcache:11211 -s --
 
   db:
-    image: postgres
+    image: postgres:latest
 
   redis:
-    image: redis
+    image: redis:latest
 
   memcache:
-    image: tutum/memcached
+    image: memcached:latest
