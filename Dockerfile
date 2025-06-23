@@ -5,16 +5,11 @@ EXPOSE 5000
 ENV RAILS_ENV=test
 
 # Add official postgresql apt deb source
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" > /etc/apt/sources.list.d/pgdg.list \
-    && wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
-    && apt-get update \
-    && apt-get install -y postgresql-client-10
+RUN apt-get update && apt-get install -y postgresql-client
 
 # Node, needed for asset pipeline
-RUN curl -sL https://deb.nodesource.com/setup_11.x | bash - \
-    && apt-get update \
-    && apt-get install -y nodejs \
-    && npm install -q -g npm
+RUN apt-get update \
+  && apt-get install -y nodejs npm
 
 # Add the wait-for-it.sh script for waiting on dependent containers
 RUN curl https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh > /usr/local/bin/wait-for-it.sh \
