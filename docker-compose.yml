@@ -17,6 +17,7 @@ services:
     environment:
       PGHOST: db
       PGUSER: postgres
+      PGPASSWORD: postgres
       REDIS_URL: redis://redis
       MEMCACHE_SERVERS: memcache
       # CI envs
@@ -36,9 +37,12 @@ services:
 
   db:
     image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
 
   redis:
     image: redis
 
   memcache:
-    image: tutum/memcached
+    image: memcached:latest
