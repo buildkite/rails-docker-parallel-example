@@ -1,10 +1,15 @@
-# Buildkite Rails Docker Parallel Example
+# Buildkite Rails Docker Parallel Pipeline Example
 
+[![Build status](https://badge.buildkite.com/aab023f2f33ab06766ed6236bc40caf0df1d9448e4f590d0ee.svg?branch=main)](https://buildkite.com/buildkite/rails-docker-parallel-example)
 [![Add to Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
 
 This repository is an example of how to easily run a large number of parallel testing agents for a [Rails](https://rubyonrails.org/) application using [Buildkite](https://buildkite.com/), [Docker](https://www.docker.com) and [Knapsack](https://github.com/ArturT/knapsack). This approach works well with Docker available autoscaling environments like the [Buildkite AWS Stack](https://buildkite.com/buildkite/buildkite-aws-stack).
 
 This repository doesn't actually include a Rails sample application, but has the same CI scripts, `Dockerfile` and `docker-compose.yml` you would use for a production application. For a non-Docker based setup, see the [Rails Parallel Example](https://github.com/buildkite/rails-parallel-example).
+
+See the full [Getting Started Guide](https://buildkite.com/docs/guides/getting-started) for step-by-step instructions on how to get this running, or [Add to Buildkite](https://buildkite.com/new) to try it yourself.
+
+<a href="https://buildkite.com/buildkite/rails-docker-parallel-example/builds?branch=main"><img width="1491" alt="Screenshot of Buildkite Rails Docker Parallel example pipeline" src=".buildkite/screenshot.png" /></a>
 
 Files to note:
 
