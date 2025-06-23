@@ -32,7 +32,7 @@ services:
       BUILDKITE_BUILD_NUMBER:
     ports:
       - "5000:5000"
-    entrypoint: wait-for-it.sh db:5432 -t 30 -s -- wait-for-it.sh redis:6379 -t 15 -s -- wait-for-it.sh memcache:11211 -t 15 -s --
+    entrypoint: wait-for-it.sh db:5432 -s -- wait-for-it.sh redis:6379 -s -- wait-for-it.sh memcache:11211 -s --
 
   db:
     image: postgres
