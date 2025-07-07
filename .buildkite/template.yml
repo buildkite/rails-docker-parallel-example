@@ -6,7 +6,7 @@ languages:
   - "Ruby"
   - "Rails"
   - "Docker"
-- "Shell"
+  - "Shell"
 steps:
   - label: ":pipeline:"
     command: "buildkite-agent pipeline upload"
