@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.6.2)
-    knapsack (1.22.0)
+    knapsack (4.0.0)
       rake
     nio4r (2.7.5)
     ostruct (0.6.3)
